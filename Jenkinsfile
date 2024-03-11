@@ -29,17 +29,12 @@ pipeline {
                 }
             }
         }
-    }
-
-    post {
-        always {
-            sh "deactivate" // Deactivate the virtual environment
-        }
-    }
-
-    post {
-        always {
-            sh 'docker logout'
+      
+        post {
+            always {
+                sh "deactivate" // Deactivate the virtual environment
+                sh 'docker logout'
+            }
         }
     }
 }
