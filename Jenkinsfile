@@ -1,6 +1,3 @@
-actual script
-
-
 pipeline {
   agent any
 
