@@ -39,6 +39,7 @@
         }
         .prediction {
             margin-top: 50px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -60,7 +61,7 @@
         <h2>Future Prediction for {{ name }}</h2>
         <p>Gender: {{ gender }}</p>
         <p>Age: {{ age }}</p>
-        <p>{{ prediction }}</p>
+        <p><strong>{{ prediction }}</strong></p>
     </div>
     {% endif %}
 </body>
