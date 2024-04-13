@@ -5,10 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nickname Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        form {
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <h1>Nickname Generator</h1>
     <form action="/generate" method="post">
+        <input type="text" name="name" placeholder="Enter your name">
+        <input type="text" name="name" placeholder="Enter another name">
+        <input type="text" name="name" placeholder="Enter one more name">
         <button type="submit">Generate Nickname</button>
     </form>
     {% if nickname %}
