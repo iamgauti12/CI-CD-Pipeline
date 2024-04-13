@@ -8,6 +8,7 @@ predictions = [
     "You will become a famous artist.",
     "You will travel the world and explore new cultures.",
     "You will find true love and live happily ever after.",
+    "You will get 3.8 GPA in this Semester, Don't forget to give treat to whole class.",
     "You will become a successful entrepreneur and start your own business.",
     "You will discover a hidden talent that will bring you great success.",
     "You will achieve your lifelong dreams and aspirations.",
