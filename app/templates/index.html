@@ -1,27 +1,18 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Awesome To-Do List</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nickname Generator</title>
 </head>
 <body>
-  <h1>My Awesome To-Do List!</h1>
-  <ul class="task-list">
-    {% for task in tasks %}
-      <li class="task-item">
-        <input type="checkbox" id="{{ loop.index }}">
-        <label for="{{ loop.index }}">{{ task }}</label>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <form action="/add" method="POST">
-    <input type="text" name="task" placeholder="Add a new task..." required>
-    <button type="submit">Add Task</button>
-  </form>
-
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <h1>Nickname Generator</h1>
+    <form action="/generate" method="post">
+        <button type="submit">Generate Nickname</button>
+    </form>
+    {% if nickname %}
+    <h2>Your Nickname: {{ nickname }}</h2>
+    {% endif %}
 </body>
 </html>
