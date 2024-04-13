@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nickname Generator</title>
+    <title>Future Predictor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@
         form {
             margin-top: 50px;
         }
-        input[type="text"] {
+        input[type="text"], select {
             padding: 10px;
             font-size: 16px;
             margin-bottom: 10px;
@@ -32,23 +32,23 @@
     </style>
 </head>
 <body>
-    <h1>Nickname Generator</h1>
-    <form action="/generate" method="post">
-        {% for name in names %}
-        <input type="text" name="name" placeholder="Enter a name" value="{{ name }}">
-        {% endfor %}
-        <button type="submit">Generate Nickname</button>
+    <h1>Future Predictor</h1>
+    <form action="/predict" method="post">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <select name="gender" required>
+            <option value="" disabled selected>Select your gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        <input type="number" name="age" placeholder="Enter your age" required>
+        <button type="submit">Predict Future</button>
     </form>
-    {% if nickname %}
-    <h2>Your Nickname: {{ nickname }}</h2>
-    {% endif %}
-    {% if additional_nicknames %}
-    <h3>Additional Nicknames:</h3>
-    <ul>
-        {% for additional_nickname in additional_nicknames %}
-        <li>{{ additional_nickname }}</li>
-        {% endfor %}
-    </ul>
+    {% if prediction %}
+    <h2>Future Prediction for {{ name }}</h2>
+    <p>Gender: {{ gender }}</p>
+    <p>Age: {{ age }}</p>
+    <p>{{ prediction }}</p>
     {% endif %}
 </body>
 </html>
