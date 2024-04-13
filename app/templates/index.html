@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome To-Do List</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>To-Do List</h1>
-    <form action="/add" method="POST">
-        <input type="text" name="todo" placeholder="Enter a new to-do item">
-        <button type="submit">Add</button>
-    </form>
-    <ul>
-        {% for todo in todos %}
-            <li>{{ todo }} <a href="/delete/{{ loop.index0 }}">(Delete)</a></li>
-        {% endfor %}
-    </ul>
+  <h1>My Awesome To-Do List!</h1>
+  <ul class="task-list">
+    {% for task in tasks %}
+      <li class="task-item">
+        <input type="checkbox" id="{{ loop.index }}">
+        <label for="{{ loop.index }}">{{ task }}</label>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <form action="/add" method="POST">
+    <input type="text" name="task" placeholder="Add a new task..." required>
+    <button type="submit">Add Task</button>
+  </form>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
