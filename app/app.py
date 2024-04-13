@@ -5,17 +5,28 @@ import random
 app = Flask(__name__)
 
 predictions = [
-    "You will become a famous artist.",
-    "You will travel the world and explore new cultures.",
-    "You will find true love and live happily ever after.",
-    "You will get 3.8 GPA in this Semester, Don't forget to give treat to whole class.",
-    "You will become a successful entrepreneur and start your own business.",
-    "You will discover a hidden talent that will bring you great success.",
-    "You will achieve your lifelong dreams and aspirations.",
-    "You will make a positive impact on the world and leave a lasting legacy.",
-    "You will lead a life filled with adventure and excitement.",
-    "You will find inner peace and enlightenment through spiritual growth."
+    "You will discover the secret to eternal youth and become forever 21.",
+    "You will become the world's best bubble wrap popper.",
+    "You will invent a new language that consists entirely of emoji.",
+    "You will become a professional pizza taste tester.",
+    "You will befriend a group of squirrels and lead them on epic adventures.",
+    "You will master the art of parallel parking on the first try, every time.",
+    "You will become a professional sleeper and get paid to nap all day.",
+    "You will win the lottery and spend all your winnings on a lifetime supply of tacos.",
+    "You will accidentally discover a new planet and name it after your pet goldfish.",
+    "You will become a renowned expert in the field of procrastination.",
+    "You will single-handedly bring back the mullet hairstyle and make it cool again.",
+    "You will be elected president of your own imaginary country and rule with fairness and absurdity.",
+    "You will become a world-famous mime and communicate solely through interpretive dance.",
+    "You will invent a device that automatically refills your ice cream cone whenever it's empty.",
+    "You will star in your own reality TV show about your adventures as a professional couch potato.",
+    "You will become a professional ninja and specialize in stealthy snack raids.",
+    "You will open a successful restaurant that serves only breakfast cereal.",
+    "You will become a renowned expert in the art of taking perfect selfies.",
+    "You will accidentally become a viral internet sensation for your epic fail videos.",
+    "You will win an award for the most creative use of duct tape."
 ]
+
 
 @app.route('/')
 def index():
