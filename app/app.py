@@ -4,41 +4,30 @@ import random
 
 app = Flask(__name__)
 
-adjectives = ['Happy', 'Funny', 'Crazy', 'Silly', 'Charming', 'Adventurous']
-nouns = ['Panda', 'Banana', 'Tiger', 'Dragon', 'Robot', 'Ninja']
+predictions = [
+    "You will become a famous artist.",
+    "You will travel the world and explore new cultures.",
+    "You will find true love and live happily ever after.",
+    "You will become a successful entrepreneur and start your own business.",
+    "You will discover a hidden talent that will bring you great success.",
+    "You will achieve your lifelong dreams and aspirations.",
+    "You will make a positive impact on the world and leave a lasting legacy.",
+    "You will lead a life filled with adventure and excitement.",
+    "You will find inner peace and enlightenment through spiritual growth."
+]
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/generate', methods=['POST'])
-def generate():
-    names = request.form.getlist('name')
-    if names:
-        nickname = generate_nickname(names)
-        additional_nicknames = generate_additional_nicknames(names)
-    else:
-        nickname = generate_random_nickname()
-        additional_nicknames = []
-    return render_template('index.html', nickname=nickname, names=names, additional_nicknames=additional_nicknames)
+@app.route('/predict', methods=['POST'])
+def predict():
+    name = request.form['name']
+    gender = request.form['gender']
+    age = int(request.form['age'])
 
-def generate_random_nickname():
-    adjective = random.choice(adjectives)
-    noun = random.choice(nouns)
-    return f'{adjective} {noun}'
-
-def generate_nickname(names):
-    adjective = random.choice(adjectives)
-    noun = random.choice(names)
-    return f'{adjective} {noun}'
-
-def generate_additional_nicknames(names):
-    additional_nicknames = []
-    for name in names:
-        adjective = random.choice(adjectives)
-        noun = random.choice(nouns)
-        additional_nicknames.append(f'{adjective} {noun}')
-    return additional_nicknames
+    prediction = random.choice(predictions)
+    return render_template('index.html', name=name, gender=gender, age=age, prediction=prediction)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
