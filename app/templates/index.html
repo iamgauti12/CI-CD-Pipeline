@@ -12,11 +12,16 @@
         }
         form {
             margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        input[type="text"], select {
+        input[type="text"], select, input[type="number"] {
             padding: 10px;
             font-size: 16px;
             margin-bottom: 10px;
+            width: 300px;
+            box-sizing: border-box;
         }
         button {
             padding: 10px 20px;
@@ -28,6 +33,12 @@
         }
         button:hover {
             background-color: #45a049;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .prediction {
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -41,14 +52,16 @@
             <option value="Female">Female</option>
             <option value="Other">Other</option>
         </select>
-        <input type="number" name="age" placeholder="Enter your age" required>
+        <input type="number" name="age" placeholder="Enter your age" min="1" max="150" required>
         <button type="submit">Predict Future</button>
     </form>
     {% if prediction %}
-    <h2>Future Prediction for {{ name }}</h2>
-    <p>Gender: {{ gender }}</p>
-    <p>Age: {{ age }}</p>
-    <p>{{ prediction }}</p>
+    <div class="prediction">
+        <h2>Future Prediction for {{ name }}</h2>
+        <p>Gender: {{ gender }}</p>
+        <p>Age: {{ age }}</p>
+        <p>{{ prediction }}</p>
+    </div>
     {% endif %}
 </body>
 </html>
