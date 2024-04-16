@@ -1,7 +1,7 @@
 def deployToRemoteInstance() {
   script {
     sh '''
-      ssh -i ~/.ssh/id_rsa ubuntu@172.31.91.145 \
+      ssh -i ~/.ssh/id_rsa ubuntu@172.31.83.78 \
       "docker pull $DOCKER_BFLASK_IMAGE && \
       docker stop myfirstcontainer || true && \
       docker rm myfirstcontainer || true && \
